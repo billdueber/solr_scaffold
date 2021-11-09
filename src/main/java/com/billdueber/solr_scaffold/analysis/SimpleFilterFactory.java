@@ -3,13 +3,12 @@ package com.billdueber.solr_scaffold.analysis;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.util.TokenFilterFactory;
 
-import java.lang.reflect.*;
 import java.util.Map;
 
-public class MungeSingleTokenFilterFactory extends TokenFilterFactory {
+public class SimpleFilterFactory extends TokenFilterFactory {
   private Boolean echoInvalidInput;
 
-  public MungeSingleTokenFilterFactory(Map<String, String> args) {
+  public SimpleFilterFactory(Map<String, String> args) {
     super(args);
     echoInvalidInput = getBoolean(args, "echoInvalidInput", false);
   }
@@ -18,8 +17,8 @@ public class MungeSingleTokenFilterFactory extends TokenFilterFactory {
     return echoInvalidInput;
   }
 
-  public MungeSingleTokenFilter create(TokenStream input) {
-    return new MungeSingleTokenFilter(input, echoInvalidInput);
+  public SimpleFilter create(TokenStream input) {
+    return new SimpleFilter(input, echoInvalidInput);
   }
 
 }

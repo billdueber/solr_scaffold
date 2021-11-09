@@ -2,11 +2,11 @@ package com.billdueber.solr_scaffold.analysis.example;
 
 import com.billdueber.solr_scaffold.schema.MungedStringIndexedOnly;
 
-public class LowerCaseIndexedOnly extends MungedStringIndexedOnly {
+public class SmileyIndexedOnly extends MungedStringIndexedOnly {
 
   @Override
   public String munge(String str) {
-    return str.toLowerCase();
+    return str.replaceAll("[Oo]", "😀");
   }
 
 }

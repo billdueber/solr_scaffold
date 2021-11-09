@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
 
-public class MungeSingleTokenFilter extends TokenFilter {
+public class SimpleFilter extends TokenFilter {
 
   private static final Logger LOGGER = LoggerFactory
       .getLogger(MethodHandles.lookup().lookupClass());
@@ -28,12 +28,12 @@ public class MungeSingleTokenFilter extends TokenFilter {
 
   private Boolean echoInvalidInput;
 
-  public MungeSingleTokenFilter(TokenStream aStream, Boolean echoInvalidInput) {
+  public SimpleFilter(TokenStream aStream, Boolean echoInvalidInput) {
     super(aStream);
     this.echoInvalidInput = echoInvalidInput;
   }
 
-  public MungeSingleTokenFilter(TokenStream aStream) {
+  public SimpleFilter(TokenStream aStream) {
     this(aStream, false);
   }
 
