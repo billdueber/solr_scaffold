@@ -1,4 +1,4 @@
-# solr_scaffold -- template and examples for solr filters and String-type field
+# solr_scaffold -- base classes and examples for solr filters and String-type field
 
 There's a real advantage to doing data munging within the solr process, 
 since you're guaranteed that index- and query-time analysis will be 
