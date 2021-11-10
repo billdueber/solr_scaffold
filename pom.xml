@@ -15,7 +15,7 @@
   </properties>
 
   <build>
-    <finalName>solr_scaffold-${project.version}</finalName>
+    <finalName>${artifactId}-${project.version}</finalName>
   </build>
 
   <dependencies>
