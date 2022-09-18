@@ -1,16 +1,14 @@
 package com.billdueber.solr_scaffold.schema;
 
-import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.index.IndexOptions;
 import org.apache.lucene.index.IndexableField;
-import org.apache.solr.schema.FieldType;
 import org.apache.solr.schema.SchemaField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.invoke.MethodHandles;
 
-public class MungedStringIndexedOnly extends MungedStringIndexedAndStored {
+public class StringMungedIndexPlainStored extends StringMungedIndexMungedStored {
   private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
   private Boolean echoInvalidInput = false;
 

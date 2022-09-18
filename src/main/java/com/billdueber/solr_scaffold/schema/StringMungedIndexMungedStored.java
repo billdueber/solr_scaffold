@@ -1,25 +1,18 @@
 package com.billdueber.solr_scaffold.schema;
 
-import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.TokenStream;
-import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
-import org.apache.lucene.analysis.util.TokenFilterFactory;
-import org.apache.solr.analysis.TokenizerChain;
-import org.apache.solr.schema.FieldType;
 import org.apache.solr.schema.IndexSchema;
 import org.apache.solr.schema.StrField;
 import org.apache.solr.schema.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.lang.invoke.MethodHandles;
 import java.util.Map;
 
-public class MungedStringIndexedAndStored extends StrField {
+public class StringMungedIndexMungedStored extends StrField {
 
   private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-  private Boolean echoInvalidInput = false;
+  protected Boolean echoInvalidInput = false;
   public IndexSchema sch;
   public String munged;
 
