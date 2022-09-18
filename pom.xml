@@ -5,7 +5,7 @@
 
   <groupId>com.billdueber</groupId>
   <artifactId>solr_scaffold</artifactId>
-  <version>1.0</version>
+  <version>0.9</version>
 
 
   <properties>

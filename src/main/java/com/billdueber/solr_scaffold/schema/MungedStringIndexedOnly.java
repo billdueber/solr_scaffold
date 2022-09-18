@@ -1,7 +1,9 @@
 package com.billdueber.solr_scaffold.schema;
 
+import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.index.IndexOptions;
 import org.apache.lucene.index.IndexableField;
+import org.apache.solr.schema.FieldType;
 import org.apache.solr.schema.SchemaField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +16,7 @@ public class MungedStringIndexedOnly extends MungedStringIndexedAndStored {
 
   @Override
   public IndexableField createField(SchemaField field, Object value) {
+
     if (!field.indexed() && !field.stored()) {
       if (log.isTraceEnabled())
         log.trace("Ignoring unindexed/unstored field: {}", field);
@@ -29,7 +32,7 @@ public class MungedStringIndexedOnly extends MungedStringIndexedAndStored {
      */
 
     if (val == null) return null;
-    if (munge(val) == null && !echoInvalidInput) return null;
+    if (this.munged == null && !echoInvalidInput) return null;
 
     /**
      *  Now create the new field with the passed-in value, so the stored value is what was passed in
