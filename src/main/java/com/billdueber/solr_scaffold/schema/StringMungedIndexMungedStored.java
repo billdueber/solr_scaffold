@@ -2,17 +2,18 @@ package com.billdueber.solr_scaffold.schema;
 
 import org.apache.solr.schema.IndexSchema;
 import org.apache.solr.schema.StrField;
+import org.apache.solr.schema.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.invoke.MethodHandles;
 import java.util.Map;
 
-public class MungedStringIndexedAndStored extends StrField {
+public class StringMungedIndexMungedStored extends StrField {
 
   private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-  private Boolean echoInvalidInput = false;
-
+  protected Boolean echoInvalidInput = false;
+  public String munged;
 
   protected void init(IndexSchema schema, Map<String, String> args) {
     super.init(schema, args);
@@ -28,7 +29,7 @@ public class MungedStringIndexedAndStored extends StrField {
 
   @Override
   public String toInternal(String val) {
-    String munged = munge(val);
+    munged = munge(val);
     if (munged == null && echoInvalidInput) {
       munged = val;
     }

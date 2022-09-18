@@ -16,6 +16,8 @@ public class SmileyFilter extends SimpleFilter {
     super(aStream, echoInvalidInput);
   }
 
+
+
   @Override
   public String munge(String str) {
     return str.replaceAll("[Oo]", "😀");

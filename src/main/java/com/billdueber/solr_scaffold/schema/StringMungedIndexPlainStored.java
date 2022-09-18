@@ -8,12 +8,13 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.invoke.MethodHandles;
 
-public class MungedStringIndexedOnly extends MungedStringIndexedAndStored {
+public class StringMungedIndexPlainStored extends StringMungedIndexMungedStored {
   private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
   private Boolean echoInvalidInput = false;
 
   @Override
   public IndexableField createField(SchemaField field, Object value) {
+
     if (!field.indexed() && !field.stored()) {
       if (log.isTraceEnabled())
         log.trace("Ignoring unindexed/unstored field: {}", field);
@@ -29,7 +30,7 @@ public class MungedStringIndexedOnly extends MungedStringIndexedAndStored {
      */
 
     if (val == null) return null;
-    if (munge(val) == null && !echoInvalidInput) return null;
+    if (this.munged == null && !echoInvalidInput) return null;
 
     /**
      *  Now create the new field with the passed-in value, so the stored value is what was passed in
