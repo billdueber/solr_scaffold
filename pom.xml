@@ -10,12 +10,13 @@
 
   <properties>
     <solr.version>8.8.2</solr.version>
+    <solr.major_version>8</solr.major_version>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
   </properties>
 
   <build>
-    <finalName>${artifactId}-${project.version}</finalName>
+    <finalName>${artifactId}-${project.version}_solr${solr.major_version}</finalName>
   </build>
 
   <dependencies>

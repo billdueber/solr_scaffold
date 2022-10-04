@@ -110,9 +110,8 @@ Creating the string types is even shorter; simply inherit from
 and provide an implementation of `munge`.
 
 ```java
-package your.java.
+package your.java.package;
 
-package.schema;
 import com.billdueber.solr_scaffold.schema.StringMungedIndexMungedStored;
 
 public class SmileyString extends StringMungedIndexMungedStored {
